@@ -3,45 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project Dashboard</title>
+    <title>My Project Dashboard v0.2</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Simple style for a bit of flair */
-        body { background-color: #f3f4f6; }
+        body {
+            font-family: 'Inter', sans-serif;
+            /* New gradient background */
+            background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
+            color: #ffffff;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Animated Wave Background Container */
+        .wave-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat-x;
+            background-position: 0 bottom;
+            transform: translateX(0);
+        }
+
+        .wave.wave1 {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.1);"></path></svg>');
+            animation: wave-flow 27s linear infinite;
+        }
+
+        .wave.wave2 {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.08);"></path></svg>');
+            animation: wave-flow 30s linear infinite reverse;
+        }
+        
+        .wave.wave3 {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C150.00,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.05);"></path></svg>');
+            animation: wave-flow 18s linear infinite;
+        }
+
+        @keyframes wave-flow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .company-header {
+            border-left: 4px solid;
+            padding-left: 1rem;
+        }
+
+        /* New "Glass" Card Style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1rem; /* 16px */
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+        }
+        .card-info {
+            padding: 1.5rem; /* 24px */
+        }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
+<body class="text-white">
 
-    <div class="container mx-auto p-8">
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold text-gray-800">My Website Portfolio</h1>
-            <p class="text-xl text-gray-500 mt-2">A collection of projects built and managed in one place.</p>
+    <!-- Animated Wave Background -->
+    <div class="wave-background">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
+
+    <div class="container mx-auto p-6 md:p-12 relative z-10">
+        <header class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-black tracking-tight">Website Portfolio</h1>
+            <p class="text-xl text-indigo-200 mt-3">A collection of mock projects, each with three distinct visual styles.</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Section for PRS Sites -->
+        <section class="mb-16">
+            <h2 class="company-header text-3xl font-bold mb-6 border-teal-400 text-teal-300">PRS Academy Sites</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="../prs-sites/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">A professional and clean design focused on trust and clarity.</p></div></a>
+                <a href="../prs-sites/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">A modern, high-contrast design for a confident brand.</p></div></a>
+                <a href="../prs-sites/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A friendly, approachable design focused on the mentor.</p></div></a>
+            </div>
+        </section>
 
-            <a href="URL_FOR_PRS_ACADEMY" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-gray-900">PRS Academy</h2>
-                    <p class="mt-2 text-gray-600">A mentorship site for forex trading, built with HTML and Tailwind CSS.</p>
-                </div>
-            </a>
+        <!-- Section for Rainboh Sites -->
+        <section class="mb-16">
+            <h2 class="company-header text-3xl font-bold mb-6 border-rose-400 text-rose-300">Rainboh Craft Sites</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="../rainboh-sites/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">An elegant, minimalist layout for showcasing artisanal products.</p></div></a>
+                <a href="../rainboh-sites/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">A vibrant, colorful design that pops with creative energy.</p></div></a>
+                <a href="../rainboh-sites/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A rustic, handmade feel that reflects the creator's personality.</p></div></a>
+            </div>
+        </section>
 
-            <a href="URL_FOR_RAINBOH_CRAFT" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-gray-900">Rainboh Craft Site</h2>
-                    <p class="mt-2 text-gray-600">An e-commerce or portfolio site for handmade crafts.</p>
-                </div>
-            </a>
-
-            <a href="URL_FOR_SUDODEV" target="_blank" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-gray-900">SudoDev Site</h2>
-                    <p class="mt-2 text-gray-600">A developer portfolio or blog site showcasing technical projects.</p>
-                </div>
-            </a>
-
-        </div>
+        <!-- Section for Plumbing Services Sites -->
+        <section>
+            <h2 class="company-header text-3xl font-bold mb-6 border-sky-400 text-sky-300">Plumbing Services Sites</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="../plumbing-services-sites/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">A reliable, trustworthy design for a local service business.</p></div></a>
+                <a href="../plumbing-services-sites/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">An emergency-focused, high-visibility design with clear calls to action.</p></div></a>
+                <a href="../plumbing-services-sites/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A family-owned, community-focused design that builds rapport.</p></div></a>
+            </div>
+        </section>
     </div>
 
 </body>
