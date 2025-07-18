@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Program - PRS Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #121212;
+            color: #e5e7eb;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-link {
+            @apply px-3 py-2 text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-amber-400 transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #fbbf24;
+        }
+        .btn-primary {
+            @apply bg-amber-400 text-gray-900 font-bold py-4 px-10 rounded-sm uppercase tracking-wider hover:bg-amber-300 transition-colors duration-300 text-base;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold uppercase tracking-widest text-white">PRS Academy</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="the_program.html" class="nav-link active">The Program</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-20">
+        <div class="text-center">
+            <h1 class="text-5xl mb-4 text-white">The Lifetime Mentorship</h1>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">This is not a course. It's a complete transformation of your trading career.</p>
+        </div>
+
+        <!-- Offer Cards -->
+        <div class="mt-16 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                <h3 class="text-2xl text-amber-400 mb-3">12 One-on-One Sessions</h3>
+                <p class="text-gray-400">Personalized, intensive coaching. We focus on your specific weaknesses until they become strengths.</p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                <h3 class="text-2xl text-amber-400 mb-3">The PRS Trading System</h3>
+                <p class="text-gray-400">A complete, rule-based methodology. You'll know exactly what to look for and how to act.</p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                <h3 class="text-2xl text-amber-400 mb-3">Psychology & Risk Mastery</h3>
+                <p class="text-gray-400">Forge the mindset of a professional trader. Control emotion, manage risk, and execute flawlessly.</p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                <h3 class="text-2xl text-amber-400 mb-3">Lifetime VIP Group Access</h3>
+                <p class="text-gray-400">Your journey doesn't end. Get ongoing support and trade analysis in a community of winners.</p>
+            </div>
+        </div>
+
+        <!-- Investment Section -->
+        <div class="mt-20 max-w-2xl mx-auto text-center bg-gray-900 p-10 rounded-lg shadow-2xl border-2 border-amber-400">
+             <h2 class="text-3xl text-white">Your One-Time Investment</h2>
+             <p class="text-6xl font-black text-amber-400 my-4">R8000</p>
+             <p class="text-gray-400 mb-6">A single payment for a lifetime of skill and community access. No hidden fees. Ever.</p>
+             <a href="https://wa.me/[YourNumber]?text=Hi%20Bongani,%20I'm%20ready%20to%20invest%20in%20the%20PRS%20Academy%20lifetime%20mentorship." target="_blank" class="btn-primary">Enroll Now</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 PRS Academy | Precision Forex Mentorship</p>
+            <p class="text-sm text-gray-500 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
