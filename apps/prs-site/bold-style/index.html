@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRS Academy - Precision Forex Mentorship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #121212; /* Very dark gray */
+            color: #e5e7eb; /* Light gray */
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-link {
+            @apply px-3 py-2 text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-amber-400 transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #fbbf24; /* Amber 400 */
+        }
+        .btn-primary {
+            @apply bg-amber-400 text-gray-900 font-bold py-4 px-10 rounded-sm uppercase tracking-wider hover:bg-amber-300 transition-colors duration-300 text-base;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold uppercase tracking-widest text-white">PRS Academy</a>
+            <nav>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="the_program.html" class="nav-link">The Program</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-white text-center bg-black">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10"></div>
+        <img src="https://placehold.co/1200x800/121212/fbbf24?text=FX" alt="Abstract financial chart background" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="relative z-20 p-6">
+            <h1 class="text-5xl md:text-7xl">Achieve Forex Mastery. Fast.</h1>
+            <p class="text-lg md:text-xl mt-4 mb-8 max-w-3xl mx-auto text-gray-300">A direct path to profitability for traders stuck in a cycle of losses. One method. Total clarity.</p>
+            <a href="the_program.html" class="btn-primary">Claim Your Edge</a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl text-center mb-16 text-white">Your Path to Precision</h2>
+            <div class="grid md:grid-cols-3 gap-10 text-center">
+                <!-- Step 1 -->
+                <div class="border border-amber-400/30 p-8 rounded-lg">
+                    <div class="text-amber-400 text-5xl font-black mb-4">01</div>
+                    <h3 class="text-2xl mb-3 text-white">Learn the Method</h3>
+                    <p class="text-gray-400">Master one powerful, rule-based strategy in 12 focused one-on-one sessions.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="border border-amber-400/30 p-8 rounded-lg">
+                    <div class="text-amber-400 text-5xl font-black mb-4">02</div>
+                    <h3 class="text-2xl mb-3 text-white">Master Psychology</h3>
+                    <p class="text-gray-400">Forge elite discipline. Trade with patience, confidence, and zero emotion.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="border border-amber-400/30 p-8 rounded-lg">
+                    <div class="text-amber-400 text-5xl font-black mb-4">03</div>
+                    <h3 class="text-2xl mb-3 text-white">Join the Pride</h3>
+                    <p class="text-gray-400">Gain lifetime access to a VIP community of focused, profitable traders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+             <h2 class="text-4xl text-center mb-12 text-white">Results, Not Hype</h2>
+             <div class="bg-gray-800 p-10 rounded-lg shadow-2xl">
+                <p class="text-2xl italic text-gray-300">"Before Bongani, I was just gambling. Now, I have a plan. I know exactly when to enter, when to exit, and when to sit on my hands. It's a total game-changer."</p>
+                <p class="mt-6 font-bold text-amber-400 uppercase tracking-wider">- Thabo M, Former Student</p>
+             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 PRS Academy | Precision Forex Mentorship</p>
+            <p class="text-sm text-gray-500 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
