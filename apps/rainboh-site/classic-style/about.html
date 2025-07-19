@@ -3,64 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - PRS Academy</title>
+    <title>About - Rainboh Craft</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Quicksand', sans-serif;
-            background-color: #F0F9FF;
-            color: #374151;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
         }
-        h1, h2, h3, .font-brand {
-            font-family: 'Comfortaa', sans-serif;
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
         }
         .nav-link {
-            @apply px-4 py-2 text-lg text-gray-600 hover:text-teal-500 transition-colors duration-300;
+            @apply px-4 py-2 text-gray-600 font-semibold hover:text-blue-600 transition-colors duration-300;
         }
         .nav-link.active {
-            color: #14b8a6;
-            font-weight: 700;
+            color: #2563eb;
+            border-bottom: 2px solid #2563eb;
         }
     </style>
 </head>
-<body>
+<body class="text-gray-900">
 
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="font-brand text-3xl text-teal-500">PRS Academy</a>
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Rainboh Craft</a>
             <nav>
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="the_program.html" class="nav-link">The Program</a>
-                <a href="about.html" class="nav-link active">About Me</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link active">About</a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-20">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center">
-                 <h1 class="text-5xl text-gray-800 mb-10">It's Nice to Meet You!</h1>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl p-8 grid md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-1">
-                    <img src="https://placehold.co/400x500/cffafe/115e59?text=Bongani" alt="A friendly photo of Bongani" class="rounded-lg shadow-md w-full h-auto object-cover">
-                </div>
+    <main class="container mx-auto px-6 py-16">
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+            <h1 class="text-4xl font-bold text-center mb-10">Our Story</h1>
+            <div class="grid md:grid-cols-5 gap-12 items-center">
                 <div class="md:col-span-2">
-                    <h2 class="text-4xl text-teal-600 mb-4">I'm Bongani</h2>
-                    <div class="text-gray-600 space-y-4 leading-relaxed text-lg">
+                    <img src="https://placehold.co/400x500/e0e7ff/333333?text=Creator" alt="The creator of Rainboh Craft" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="text-3xl font-bold mb-4">From a Passion Project to a Business</h2>
+                    <div class="text-gray-700 space-y-4 leading-relaxed">
                         <p>
-                           Like many of you, I started my trading journey full of hope, but I quickly found myself overwhelmed. I know what it feels like to be confused by charts and frustrated by losses.
+                            Welcome to Rainboh Craft! My name is [Wife's Name], and I'm the heart and hands behind every item you see here. What started as a hobby and a way to create unique decorations for my own home has blossomed into a small business I'm incredibly passionate about.
                         </p>
                         <p>
-                           After years of trial and error, I finally developed a simple, clear approach that worked for me. Seeing my own success, I became passionate about helping others skip the years of frustration I went through. That's why I started PRS Academy.
+                            Based in the beautiful city of Cape Town, I specialize in creating handmade macrame decor and personalized crafts. Each piece is meticulously crafted with high-quality materials, attention to detail, and a whole lot of love. 
                         </p>
                         <p>
-                           My teaching style is patient and supportive. I believe anyone can learn to trade profitably with the right guidance and a bit of practice. My goal isn't just to teach you a strategy; it's to be the mentor I wish I had when I was starting out.
+                            My goal is to create special items that bring joy, color, and a personal touch to your home and celebrations. Thank you for being here and for supporting a dream.
                         </p>
                     </div>
                 </div>
@@ -69,10 +66,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-gray-600 py-8 mt-12">
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-12">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 PRS Academy | Your Forex Partner</p>
-            <p class="text-sm text-gray-500 mt-2">Website by [Your Business Name]</p>
+            <p>&copy; 2025 Rainboh Craft | Handmade in Cape Town</p>
+            <p class="text-sm text-gray-400 mt-2">Website by [Your Business Name]</p>
         </div>
     </footer>
 
