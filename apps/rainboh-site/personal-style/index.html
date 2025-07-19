@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainboh Craft - Handmade with Heart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FEFBF6; /* Creamy off-white */
+            color: #5D4037; /* Soft Brown */
+        }
+        h1, h2, h3, .font-brand {
+            font-family: 'Dancing Script', cursive;
+        }
+        .nav-link {
+            @apply px-4 py-2 text-lg text-stone-600 hover:text-pink-500 transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #ec4899; /* Pink 500 */
+        }
+        .btn-primary {
+            @apply bg-pink-400 text-white font-bold py-3 px-8 rounded-full hover:bg-pink-500 transition-transform duration-300 transform hover:scale-105;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white/70 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-brand text-4xl text-pink-500">Rainboh Craft</a>
+            <nav>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">About Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-6xl text-pink-500 leading-tight">Made with a Little Bit of Magic</h1>
+                <p class="mt-6 text-lg text-stone-700">Welcome! Every piece here is handmade with love, just for you. Explore unique crafts that bring joy to your home.</p>
+                <a href="products.html" class="btn-primary mt-8 inline-block">See My Creations</a>
+            </div>
+            <div>
+                <img src="https://placehold.co/500x500/FBCFE8/5D4037?text=Handmade+Joy" alt="A beautiful handmade craft" class="rounded-full shadow-xl w-full max-w-sm mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Maker Section -->
+    <section class="py-20 bg-rose-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl text-stone-700 mb-4">A Note from the Maker</h2>
+            <p class="max-w-3xl mx-auto text-lg text-stone-600 leading-relaxed">
+                Hi, I'm [Wife's Name]! Rainboh Craft is my passion project, born from a love of creating beautiful things by hand. Seeing my creations find a place in your home is the greatest joy. Thank you so much for stopping by and supporting my dream!
+            </p>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl text-center text-stone-700 mb-12">Words from Happy Homes</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-stone-600">"The name sign for my nursery is absolutely perfect! The quality is amazing and it was made with so much care."</p>
+                    <p class="mt-4 font-bold text-pink-500">- Jessica L.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-stone-600">"I am so in love with my macrame wall hanging. It adds such a warm and beautiful touch to my living room."</p>
+                    <p class="mt-4 font-bold text-pink-500">- Megan R.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-stone-600">"Ordered a custom gift and it exceeded all my expectations! Such a unique and special present."</p>
+                    <p class="mt-4 font-bold text-pink-500">- David S.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-200 text-stone-600 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Rainboh Craft | Handmade with love in Cape Town</p>
+            <p class="text-sm text-stone-500 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
