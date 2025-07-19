@@ -18,10 +18,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # --- ADD THESE TWO LINES ---
     environment:
       name: github-pages
-    # ---------------------------
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,7 +30,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This path should point to your dashboard's files
+          # --- THIS IS THE UPDATED LINE ---
+          # It now uploads all sites within the 'apps' folder.
           path: './apps'
 
       - name: Deploy to GitHub Pages
