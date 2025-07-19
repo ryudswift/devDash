@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Program - PRS Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            @apply px-4 py-2 text-gray-600 font-semibold hover:text-blue-600 transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #2563eb;
+            border-bottom: 2px solid #2563eb;
+        }
+        .btn-primary {
+            @apply bg-blue-600 text-white font-bold py-3 px-8 rounded-md hover:bg-blue-700 transition-colors duration-300 text-lg;
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">PRS Academy</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="the_program.html" class="nav-link active">The Program</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-20">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">The PRS Academy Lifetime Mentorship</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Everything you need to become a self-sufficient, profitable trader. No upsells, no recurring fees.</p>
+        </div>
+
+        <div class="mt-16 bg-white rounded-lg shadow-lg p-8 md:p-12 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6">What You Get</h2>
+            <ul class="space-y-4 text-lg">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong>12 One-on-One Sessions:</strong> Personalized coaching tailored to your learning speed and schedule. We don't move on until you've mastered the concept.</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong>The Complete PRS Trading System:</strong> A full, rule-based strategy for reading the market and executing trades with precision.</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong>Psychology & Risk Mastery:</strong> Learn the most critical part of trading—how to manage your capital and your mindset like a professional.</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span><strong>Lifetime VIP Group Access:</strong> Join our community of profitable traders for ongoing support, trade ideas, and direct access to me.</span>
+                </li>
+            </ul>
+
+            <div class="mt-10 pt-8 border-t border-gray-200 text-center">
+                <h3 class="text-2xl font-bold">Your One-Time Investment in a Lifetime Skill</h3>
+                <p class="text-5xl font-bold text-blue-600 my-4">R8000</p>
+                <a href="https://wa.me/[YourNumber]?text=Hi%20Bongani,%20I'm%20interested%20in%20the%20PRS%20Academy%20lifetime%20mentorship." target="_blank" class="btn-primary mt-4">Enroll Now & Start Your Journey</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 PRS Academy | Forex Mentorship</p>
+            <p class="text-sm text-gray-400 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
