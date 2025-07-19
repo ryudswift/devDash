@@ -1,100 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-pastel-terminal">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Templates</title>
+    <title>Site Templates - Themed</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* ---
+         * Changelog v1.11
+         * - Integrated the full multi-theme system from the main portfolio.
+         * - Replaced the static wave background with the dynamic particles.js animation.
+         * - Added the floating action button (FAB) theme switcher with all 6 themes.
+         * - Applied the "pixel-style" animated card effect to all template links.
+         * - Added a glowing, pulsing animation to the main header title.
+        --- */
+
+        /* --- Theme Definitions --- */
+        :root {
+            /* Default Theme: Pastel Terminal (Darker) */
+            --bg-dark: #211F2C;
+            --bg-card: #2A2739;
+            --text-main: #EAE6FF;
+            --text-muted: #b0a9d4;
+            --highlight-primary: #A48DFA;
+            --highlight-secondary: #8DFAAF;
+            --border-color: #403d52;
+            --shadow-color: rgba(0,0,0,0.2);
+            --particle-color: #A48DFA;
+            --particle-line-color: #403d52;
+        }
+
+        .theme-pastel-light {
+            --bg-dark: #F4F1FF;
+            --bg-card: #FFFFFF;
+            --text-main: #2C2A3A;
+            --text-muted: #5e5a7b;
+            --highlight-primary: #8A6DFF;
+            --highlight-secondary: #00C6AE;
+            --border-color: #e0d9ff;
+            --shadow-color: rgba(0,0,0,0.1);
+            --particle-color: #8A6DFF;
+            --particle-line-color: #d1c6ff;
+        }
+
+        .theme-fruity-catppuccin {
+            --bg-dark: #1E1E2E;
+            --bg-card: #181825;
+            --text-main: #CDD6F4;
+            --text-muted: #A6ADC8;
+            --highlight-primary: #F5C2E7;
+            --highlight-secondary: #A6E3A1;
+            --border-color: #313244;
+            --shadow-color: rgba(0,0,0,0.2);
+            --particle-color: #F5C2E7;
+            --particle-line-color: #45475A;
+        }
+
+        .theme-original-blue {
+            --bg-dark: #1a1a1a;
+            --bg-card: #2c2c2c;
+            --text-main: #f5f5dc;
+            --text-muted: #cccccc;
+            --highlight-primary: #d2b48c;
+            --highlight-secondary: #87ceeb;
+            --border-color: #444;
+            --shadow-color: rgba(0,0,0,0.4);
+            --particle-color: #d2b48c;
+            --particle-line-color: #444;
+        }
+        
+        .theme-ubuntu {
+            --bg-dark: #2c001e;
+            --bg-card: #3b142f;
+            --text-main: #f2f2f2;
+            --text-muted: #d9d9d9;
+            --highlight-primary: #E95420;
+            --highlight-secondary: #dd4814;
+            --border-color: #58334d;
+            --shadow-color: rgba(0,0,0,0.3);
+            --particle-color: #E95420;
+            --particle-line-color: #58334d;
+        }
+
+        .theme-light-fruity {
+            --bg-dark: #FFF9F2;
+            --bg-card: #FFFFFF;
+            --text-main: #5D4037;
+            --text-muted: #795548;
+            --highlight-primary: #FF7043;
+            --highlight-secondary: #FFCA28;
+            --border-color: #FFCCBC;
+            --shadow-color: rgba(0,0,0,0.1);
+            --particle-color: #FF7043;
+            --particle-line-color: #FFCCBC;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
-            color: #ffffff;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            transition: background-color 0.5s ease, color 0.5s ease;
             overflow-x: hidden;
         }
-        .wave-background {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Ubuntu Mono', monospace;
         }
-        .wave {
-            position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; background-repeat: repeat-x; background-position: 0 bottom; transform: translateX(0);
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background-color: var(--bg-dark);
+            transition: background-color 0.5s ease;
         }
-        .wave.wave1 {
-            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.1);"></path></svg>');
-            animation: wave-flow 15s linear infinite;
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
         }
-        .wave.wave2 {
-            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.08);"></path></svg>');
-            animation: wave-flow 20s linear infinite reverse;
+        .animated-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: 4px 4px 0px 0px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.5s ease;
         }
-        .wave.wave3 {
-            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C150.00,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.05);"></path></svg>');
-            animation: wave-flow 12s linear infinite;
-        }
-        @keyframes wave-flow {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .company-header { border-left: 4px solid; padding-left: 1rem; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); transition: all 0.3s ease-in-out;
-        }
-        .glass-card:hover {
-            transform: translateY(-8px) scale(1.02); background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+        .animated-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 8px 8px 0px 0px var(--shadow-color);
+            border-color: var(--highlight-primary);
         }
         .card-info { padding: 1.5rem; }
+        .company-header {
+            border-left: 4px solid var(--highlight-primary);
+            padding-left: 1rem;
+            color: var(--highlight-primary);
+            transition: all 0.5s ease;
+        }
+        
+        .header-pulse { animation: pulse 2.5s infinite ease-in-out; }
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                text-shadow: 0 0 5px var(--text-main), 0 0 10px var(--highlight-primary);
+            }
+            50% { 
+                transform: scale(1.02); 
+                text-shadow: 0 0 15px var(--text-main), 0 0 25px var(--highlight-primary);
+            }
+        }
+
+        /* --- Theme Switcher FAB --- */
+        #theme-fab-container {
+            position: fixed;
+            top: 50%;
+            right: 1.5rem;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        #theme-fab-toggle {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.5s ease;
+        }
+        #theme-fab-toggle:hover {
+            transform: scale(1.1);
+        }
+        #theme-fab-container.open #theme-fab-toggle {
+            transform: rotate(45deg);
+        }
+        #theme-fab-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--highlight-primary);
+            transition: color 0.5s ease;
+        }
+        #theme-fab-options {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        #theme-fab-container.open #theme-fab-options {
+            pointer-events: auto;
+        }
+        .theme-button {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-top: -1.25rem;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--bg-dark);
+            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy transition */
+            transform-origin: center right;
+            opacity: 0;
+        }
+        #theme-fab-container.open .theme-button {
+            opacity: 1;
+        }
+        
+        #theme-fab-container.open .theme-button:nth-child(1) { transform: translateY(-3.5rem); transition-delay: 0.0s; }
+        #theme-fab-container.open .theme-button:nth-child(2) { transform: translateY(-6.5rem); transition-delay: 0.15s; }
+        #theme-fab-container.open .theme-button:nth-child(3) { transform: translateY(-9.5rem); transition-delay: 0.3s; }
+        #theme-fab-container.open .theme-button:nth-child(4) { transform: translateY(3.5rem); transition-delay: 0.0s; }
+        #theme-fab-container.open .theme-button:nth-child(5) { transform: translateY(6.5rem); transition-delay: 0.15s; }
+        #theme-fab-container.open .theme-button:nth-child(6) { transform: translateY(9.5rem); transition-delay: 0.3s; }
+
+        .theme-button.active {
+            transform: scale(1.2) !important;
+            border-color: var(--highlight-secondary);
+        }
+        #theme-pastel-terminal { background-color: #211F2C; }
+        #theme-pastel-light { background-color: #F4F1FF; }
+        #theme-fruity-catppuccin { background-color: #1E1E2E; }
+        #theme-original-blue { background-color: #1a1a1a; }
+        #theme-ubuntu { background-color: #2c001e; }
+        #theme-light-fruity { background-color: #FFF9F2; }
+
     </style>
 </head>
-<body class="text-white">
+<body class="antialiased">
 
-    <div class="wave-background">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    </div>
+    <div id="particles-js"></div>
 
-    <div class="container mx-auto p-6 md:p-12 relative z-10">
+    <div class="content-wrapper container mx-auto p-6 md:p-12">
         <header class="text-center mb-16">
-            <h1 class="text-5xl md:text-6xl font-black tracking-tight">Website Templates</h1>
-            <p class="text-xl text-indigo-200 mt-3">A collection of mock template projects, each with three distinct visual styles.</p>
+            <h1 class="text-5xl md:text-6xl font-black tracking-tight header-pulse">Website Templates</h1>
+            <p class="text-xl mt-3 text-muted">A collection of mock template projects, each with three distinct visual styles.</p>
         </header>
 
         <!-- Section for PRS Sites -->
         <section class="mb-16">
-            <h2 class="company-header text-3xl font-bold mb-6 border-teal-400 text-teal-300">PRS Academy Sites</h2>
+            <h2 class="company-header text-3xl font-bold mb-6">PRS Academy Sites</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- THIS IS THE CORRECTED LINK -->
-                <a href="apps/prs-site/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">A professional and clean design focused on trust and clarity.</p></div></a>
-                <a href="apps/prs-site/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">A modern, high-contrast design for a confident brand.</p></div></a>
-                <a href="apps/prs-site/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A friendly, approachable design focused on the mentor.</p></div></a>
+                <a href="apps/prs-site/classic-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-muted">A professional and clean design focused on trust and clarity.</p></div></a>
+                <a href="apps/prs-site/bold-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-muted">A modern, high-contrast design for a confident brand.</p></div></a>
+                <a href="apps/prs-site/personal-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-muted">A friendly, approachable design focused on the mentor.</p></div></a>
             </div>
         </section>
 
         <!-- Section for Rainboh Sites -->
         <section class="mb-16">
-            <h2 class="company-header text-3xl font-bold mb-6 border-rose-400 text-rose-300">Rainboh Craft Sites</h2>
+            <h2 class="company-header text-3xl font-bold mb-6">Rainboh Craft Sites</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="apps/rainboh-site/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">An elegant, minimalist layout for showcasing artisanal products.</p></div></a>
-                <a href="apps/rainboh-site/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">A vibrant, colorful design that pops with creative energy.</p></div></a>
-                <a href="apps/rainboh-site/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A rustic, handmade feel that reflects the creator's personality.</p></div></a>
+                <a href="apps/rainboh-site/classic-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-muted">An elegant, minimalist layout for showcasing artisanal products.</p></div></a>
+                <a href="apps/rainboh-site/bold-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-muted">A vibrant, colorful design that pops with creative energy.</p></div></a>
+                <a href="apps/rainboh-site/personal-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-muted">A rustic, handmade feel that reflects the creator's personality.</p></div></a>
             </div>
         </section>
 
         <!-- Section for Plumbing Services Sites -->
         <section>
-            <h2 class="company-header text-3xl font-bold mb-6 border-sky-400 text-sky-300">Plumbing Services Sites</h2>
+            <h2 class="company-header text-3xl font-bold mb-6">Plumbing Services Sites</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="apps/plumbing-services-site/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">A reliable, trustworthy design for a local service business.</p></div></a>
-                <a href="apps/plumbing-services-site/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">An emergency-focused, high-visibility design with clear calls to action.</p></div></a>
-                <a href="apps/plumbing-services-site/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A family-owned, community-focused design that builds rapport.</p></div></a>
+                <a href="apps/plumbing-services-site/classic-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-muted">A reliable, trustworthy design for a local service business.</p></div></a>
+                <a href="apps/plumbing-services-site/bold-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-muted">An emergency-focused, high-visibility design with clear calls to action.</p></div></a>
+                <a href="apps/plumbing-services-site/personal-style/index.html" target="_blank" class="block animated-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-muted">A family-owned, community-focused design that builds rapport.</p></div></a>
             </div>
         </section>
     </div>
+    
+    <!-- Theme Switcher FAB -->
+    <div id="theme-fab-container">
+        <div id="theme-fab-options">
+            <button id="theme-pastel-terminal" class="theme-button" data-theme="theme-pastel-terminal" title="Pastel Terminal"></button>
+            <button id="theme-pastel-light" class="theme-button" data-theme="theme-pastel-light" title="Pastel Light"></button>
+            <button id="theme-fruity-catppuccin" class="theme-button" data-theme="theme-fruity-catppuccin" title="Fruity Catppuccin"></button>
+            <button id="theme-original-blue" class="theme-button" data-theme="theme-original-blue" title="Original Blue"></button>
+            <button id="theme-ubuntu" class="theme-button" data-theme="theme-ubuntu" title="Ubuntu"></button>
+            <button id="theme-light-fruity" class="theme-button" data-theme="theme-light-fruity" title="Light & Fruity"></button>
+        </div>
+        <button id="theme-fab-toggle">
+            <svg id="theme-fab-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402a3.75 3.75 0 0 0-5.304-5.304L4.098 14.6c-.39.39-.39 1.023 0 1.414l.495.495a1.875 1.875 0 0 1 0 2.652l-.495.495a1.875 1.875 0 0 1-2.652 0l-.495-.495a1.875 1.875 0 0 1 0-2.652l6.402-6.401a3.75 3.75 0 0 0 5.304 5.304l-6.402 6.401a3.75 3.75 0 0 0-5.304 0Z" />
+            </svg>
+        </button>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themes = {
+                'theme-pastel-terminal': {
+                    particleColor: '#A48DFA', lineColor: '#403d52'
+                },
+                'theme-pastel-light': {
+                    particleColor: '#8A6DFF', lineColor: '#d1c6ff'
+                },
+                'theme-fruity-catppuccin': {
+                    particleColor: '#F5C2E7', lineColor: '#45475A'
+                },
+                'theme-original-blue': {
+                    particleColor: '#d2b48c', lineColor: '#444'
+                },
+                'theme-ubuntu': {
+                    particleColor: '#E95420', lineColor: '#58334d'
+                },
+                'theme-light-fruity': {
+                    particleColor: '#FF7043', lineColor: '#FFCCBC'
+                }
+            };
+
+            function loadParticles(theme) {
+                if (window.pJSDom && window.pJSDom.length > 0) {
+                    window.pJSDom[0].pJS.fn.vendors.destroypJS();
+                    window.pJSDom = [];
+                }
+                
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": themes[theme].particleColor },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": themes[theme].lineColor, "opacity": 0.4, "width": 1.5 },
+                        "move": { "enable": true, "speed": 1.5, "direction": "none", "out_mode": "out" }
+                    },
+                    "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true }, "modes": { "grab": { "distance": 150, "line_linked": { "opacity": 0.7 } } } },
+                    "retina_detect": true
+                });
+            }
+            
+            function setTheme(themeName) {
+                document.documentElement.className = themeName;
+                localStorage.setItem('ryudswift-theme', themeName);
+
+                document.querySelectorAll('.theme-button').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.theme === themeName);
+                });
+                
+                loadParticles(themeName);
+            }
+
+            // --- Theme Switcher Logic ---
+            const fabContainer = document.getElementById('theme-fab-container');
+            const fabToggle = document.getElementById('theme-fab-toggle');
+            fabToggle.addEventListener('click', () => {
+                fabContainer.classList.toggle('open');
+            });
+
+            document.querySelectorAll('.theme-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    setTheme(e.target.dataset.theme);
+                    fabContainer.classList.remove('open');
+                });
+            });
+
+            let savedTheme = localStorage.getItem('ryudswift-theme') || 'theme-pastel-terminal';
+            setTheme(savedTheme);
+        });
+    </script>
 </body>
 </html>
