@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Rainboh Craft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #111827;
+            color: #f3f4f6;
+        }
+        h1, h2, h3 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+        .nav-link {
+            @apply px-3 py-2 text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #FBBF24;
+        }
+        .btn-whatsapp {
+            @apply inline-block bg-green-500 text-white font-bold py-2 px-5 rounded-full hover:bg-green-600 transition-colors duration-300 text-sm;
+        }
+        .product-card-image {
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .product-card:hover .product-card-image {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold uppercase tracking-widest">Rainboh Craft</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Products</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-20">
+        <h1 class="text-5xl text-center mb-12 text-white">The Collection</h1>
+
+        <!-- Product Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Product Card 1 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-2xl product-card">
+                <div class="overflow-hidden">
+                    <img src="https://placehold.co/400x350/A2D2FF/333333?text=MOM+Sign" alt="Custom wire word sign" class="w-full h-64 object-cover product-card-image">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-amber-400">Custom Wire Name/Word Sign</h3>
+                    <p class="text-gray-400 mb-4">A beautiful, personalized sign made with colored wire and wool. Perfect for names, inspirational words, or gifts.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <p class="text-lg font-bold">From R250</p>
+                        <a href="https://wa.me/[YourNumber]?text=Hi!%20I'm%20interested%20in%20the%20Custom%20Wire%20Sign." target="_blank" class="btn-whatsapp">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-2xl product-card">
+                <div class="overflow-hidden">
+                    <img src="https://placehold.co/400x350/FADADD/333333?text=Macrame+Rainbow" alt="Macrame rainbow wall hanging" class="w-full h-64 object-cover product-card-image">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-amber-400">Macrame Rainbow Wall Hanging</h3>
+                    <p class="text-gray-400 mb-4">Bring color and texture to your walls with this handmade macrame rainbow. Available in various color palettes.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <p class="text-lg font-bold">From R400</p>
+                        <a href="https://wa.me/[YourNumber]?text=Hi!%20I'm%20interested%20in%20the%20Macrame%20Rainbow." target="_blank" class="btn-whatsapp">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-2xl product-card">
+                <div class="overflow-hidden">
+                    <img src="https://placehold.co/400x350/BDE0FE/333333?text=Hello+Kitty" alt="Hello Kitty themed decor" class="w-full h-64 object-cover product-card-image">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-amber-400">Themed Character Decor</h3>
+                    <p class="text-gray-400 mb-4">Love a specific character? We can create themed decor like this Hello Kitty piece. Perfect for kids' rooms!</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <p class="text-lg font-bold">Price on request</p>
+                        <a href="https://wa.me/[YourNumber]?text=Hi!%20I'd%20like%20to%20inquire%20about%20a%20Themed%20Character%20piece." target="_blank" class="btn-whatsapp">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Rainboh Craft | Handmade in Cape Town</p>
+            <p class="text-sm text-gray-500 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
