@@ -32,7 +32,7 @@ jobs:
         with:
           # --- THIS IS THE UPDATED LINE ---
           # It now uploads all sites within the 'apps' folder.
-          path: './apps'
+          path: './apps/dashboard'
 
       - name: Deploy to GitHub Pages
         id: deployment
