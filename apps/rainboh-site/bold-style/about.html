@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Rainboh Craft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #111827;
+            color: #f3f4f6;
+        }
+        h1, h2, h3 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+        .nav-link {
+            @apply px-3 py-2 text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #FBBF24;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold uppercase tracking-widest">Rainboh Craft</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link active">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <h1 class="text-5xl mb-6 text-white">The Creator's Story</h1>
+                    <div class="text-gray-300 space-y-4 text-lg leading-relaxed">
+                        <p>
+                            Hi, I'm [Wife's Name], the founder and artist behind Rainboh Craft. My journey began with a simple desire: to create beautiful things that tell a story. I believe that a home should be a gallery of the things we love, and my work is designed to be a centerpiece of that collection.
+                        </p>
+                        <p>
+                            From my studio in Cape Town, I pour my passion for color, texture, and modern design into every piece. I'm dedicated to exceptional craftsmanship and creating items that are not just decorations, but expressions of art.
+                        </p>
+                        <p>
+                            Thank you for choosing to support an independent artist. I can't wait to create something special for you.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://placehold.co/500x600/1f2937/fBBF24?text=Creator's+Portrait" alt="A confident portrait of the creator of Rainboh Craft" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Rainboh Craft | Handmade in Cape Town</p>
+            <p class="text-sm text-gray-500 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
