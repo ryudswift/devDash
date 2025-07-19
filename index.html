@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Templates</title>
+    <title>My Project Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,82 +11,47 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* New gradient background */
             background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
             color: #ffffff;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
-
-        /* Animated Wave Background Container */
         .wave-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
         }
-
         .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 200%;
-            height: 100%;
-            background-repeat: repeat-x;
-            background-position: 0 bottom;
-            transform: translateX(0);
+            position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; background-repeat: repeat-x; background-position: 0 bottom; transform: translateX(0);
         }
-
         .wave.wave1 {
             background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.1);"></path></svg>');
-            animation: wave-flow 33s linear infinite;
+            animation: wave-flow 15s linear infinite;
         }
-
         .wave.wave2 {
             background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.08);"></path></svg>');
-            animation: wave-flow 40s linear infinite reverse;
+            animation: wave-flow 20s linear infinite reverse;
         }
-        
         .wave.wave3 {
             background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" xmlns="http://www.w3.org/2000/svg"><path d="M-0.00,49.98 C150.00,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L-0.00,150.00 Z" style="stroke: none; fill: rgba(255,255,255,0.05);"></path></svg>');
-            animation: wave-flow 25s linear infinite;
+            animation: wave-flow 12s linear infinite;
         }
-
         @keyframes wave-flow {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-
-        .company-header {
-            border-left: 4px solid;
-            padding-left: 1rem;
-        }
-
-        /* New "Glass" Card Style */
+        .company-header { border-left: 4px solid; padding-left: 1rem; }
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 1rem; /* 16px */
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-            transition: all 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); transition: all 0.3s ease-in-out;
         }
         .glass-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px) scale(1.02); background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
         }
-        .card-info {
-            padding: 1.5rem; /* 24px */
-        }
+        .card-info { padding: 1.5rem; }
     </style>
 </head>
 <body class="text-white">
 
-    <!-- Animated Wave Background -->
     <div class="wave-background">
         <div class="wave wave1"></div>
         <div class="wave wave2"></div>
@@ -103,6 +68,7 @@
         <section class="mb-16">
             <h2 class="company-header text-3xl font-bold mb-6 border-teal-400 text-teal-300">PRS Academy Sites</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Links updated to point into the apps folder -->
                 <a href="apps/prs-sites/classic-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Classic Style</h3><p class="mt-2 text-indigo-200">A professional and clean design focused on trust and clarity.</p></div></a>
                 <a href="apps/prs-sites/bold-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Bold Style</h3><p class="mt-2 text-indigo-200">A modern, high-contrast design for a confident brand.</p></div></a>
                 <a href="apps/prs-sites/personal-style/index.html" target="_blank" class="block glass-card"><div class="card-info"><h3 class="text-2xl font-bold">Personal Style</h3><p class="mt-2 text-indigo-200">A friendly, approachable design focused on the mentor.</p></div></a>
