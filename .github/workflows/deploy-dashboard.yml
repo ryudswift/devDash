@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # This path should point to your dashboard's files
-          path: './apps/dashboard'
+          path: './apps'
 
       - name: Deploy to GitHub Pages
         id: deployment
