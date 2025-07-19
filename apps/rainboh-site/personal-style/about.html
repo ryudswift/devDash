@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Rainboh Craft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FEFBF6;
+            color: #5D4037;
+        }
+        h1, h2, h3, .font-brand {
+            font-family: 'Dancing Script', cursive;
+        }
+        .nav-link {
+            @apply px-4 py-2 text-lg text-stone-600 hover:text-pink-500 transition-colors duration-300;
+        }
+        .nav-link.active {
+            color: #ec4899;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white/70 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-brand text-4xl text-pink-500">Rainboh Craft</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link active">About Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-20">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center">
+                 <h1 class="text-6xl text-stone-700 mb-10">My Story</h1>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1">
+                    <img src="https://placehold.co/400x500/fce7f3/5D4037?text=Me!" alt="A friendly photo of the creator" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+                <div class="md:col-span-2">
+                    <h2 class="text-4xl text-pink-500 mb-4">Hello, I'm [Wife's Name]!</h2>
+                    <div class="text-stone-600 space-y-4 leading-relaxed">
+                        <p>
+                           It's so lovely to meet you! I'm the creator, dreamer, and maker behind everything at Rainboh Craft. For as long as I can remember, I've loved working with my hands and turning simple materials into something beautiful and full of character.
+                        </p>
+                        <p>
+                           This little shop is my happy place. It's where I get to play with color, explore new ideas, and pour my heart into creating things that I hope will make you smile. Every single item is designed and handcrafted by me in my little studio in Cape Town.
+                        </p>
+                        <p>
+                           Your support means the world to me. It allows me to continue doing what I love, and for that, I am so grateful.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-200 text-stone-600 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Rainboh Craft | Handmade with love in Cape Town</p>
+            <p class="text-sm text-stone-500 mt-2">Website by [Your Business Name]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
